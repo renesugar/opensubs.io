@@ -3,6 +3,8 @@ const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
+  mode: 'development',
+
   resolve: {
     modules: [
       'node_modules',
@@ -47,6 +49,19 @@ module.exports = {
     path: path.resolve(__dirname, '../priv/static'),
     filename: '[name].bundle.js',
   },
+  /*
+  optimization: {
+  	splitChunks: {
+    	cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendor',
+          chunks: 'all'
+        }
+      }
+    }
+  },
+  */
   module: {
     rules: [
       {
@@ -74,7 +89,6 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin({ filename: 'app.bundle.css', allChunks: true }),
-    new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.bundle.js' }),
     new webpack.EnvironmentPlugin({
       NODE_ENV: 'development',
     }),
