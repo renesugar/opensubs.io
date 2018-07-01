@@ -17,7 +17,7 @@ Things I wrote about the project:
 
 - `cd apps/subs_web/frontend && node_modules/.bin/webpack --config webpack.config.js`, to build the frontend manually
 
-### View sent emails in :dev mode
+### View sent emails in the development environment
 
 The Bamboo.LocalAdapter is used in :dev mode. To see emails that have been sent, visit the following URL:
 
